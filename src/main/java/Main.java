@@ -37,7 +37,10 @@ public class Main {
                 Float monthPurchase = resultSet.getFloat("monthPurchase");
                 System.out.printf("%-35s|%-5.2f%n", courseName, monthPurchase);
             }
-
+            statement.executeUpdate("DROP TABLE Courses_MonthPurchase;");
+            statement.close();
+            resultSet.close();
+            connection.close();
         } catch (Exception ex) {
             ex.printStackTrace();
         }
